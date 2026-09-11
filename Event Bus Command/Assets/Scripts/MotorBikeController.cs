@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BikeController1 : MonoBehaviour
+public class MotorBikeController : MonoBehaviour
 {
     public enum Direction
     {
