@@ -1,16 +1,19 @@
 using UnityEngine;
 
-public class ClientEventBus : MonoBehaviour
+namespace Chapter.EventBus
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public class ClientEventBus : MonoBehaviour
     {
-        
-    }
+        private bool _isButtonEnabled;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        void Start()
+        {
+            gameObject.AddComponent<HUDController>();
+            gameObject.AddComponent<CountdownTimer>();
+            gameObject.AddComponent<BikeController>();
+
+            _isButtonEnabled = true;
+        }
     }
 }
+
