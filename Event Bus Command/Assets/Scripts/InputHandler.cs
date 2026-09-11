@@ -5,13 +5,13 @@ public class InputHandler : MonoBehaviour
     private Invoker _invoker;
     private bool _isReplaying;
     private bool _isRecording;
-    private BikeController _bikeController;
+    private BikeController1 _bikeController;
     private Command _buttonA, _buttonD, _buttonW;
     
     void Start()
     {
         _invoker = gameObject.AddComponent<Invoker>();
-        _bikeController = FindObjectOfType<BikeController>();
+        _bikeController = FindObjectOfType<BikeController1>();
 
         _buttonA = new TurnLeft(_bikeController);
         _buttonD = new TurnRight(_bikeController);
