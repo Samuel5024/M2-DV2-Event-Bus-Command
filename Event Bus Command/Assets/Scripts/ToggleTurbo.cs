@@ -1,6 +1,6 @@
 using Chapter.EventBus;
 
-public class ToggleTurbo
+public class ToggleTurbo : Command
 {
     private BikeController _controller;
     
@@ -11,6 +11,6 @@ public class ToggleTurbo
 
     public override void Execute()
     {
-        _controller.ToggleTubo();
+        _controller.ToggleTurbo();
     }
 }
