@@ -26,11 +26,8 @@ namespace Chapter.EventBus
         }
 
         private void Restart()
-        {
-            if(_isButtonEnabled)
-            {
+        { 
                 _isButtonEnabled = true;
-            }
         }
 
         void OnGUI()

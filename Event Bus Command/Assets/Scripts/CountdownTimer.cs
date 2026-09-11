@@ -27,7 +27,7 @@ namespace Chapter.EventBus
         {
             _currentTime = duration;
 
-            while(_currentTime > 0)
+            while (_currentTime > 0)
             {
                 yield return new WaitForSeconds(1f);
                 _currentTime--;
@@ -39,7 +39,7 @@ namespace Chapter.EventBus
         void OnGUI()
         {
             GUI.color = Color.blue;
-            GUI.Label(new Rect(125, 0, 100, 20), "COUNTDOWN: " + _currentTime);
+            GUI.Label(new Rect(125, 0, 200, 20), "COUNTDOWN: " + _currentTime);
         }
     }
 }
