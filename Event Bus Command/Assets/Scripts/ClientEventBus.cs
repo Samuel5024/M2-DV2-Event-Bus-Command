@@ -14,6 +14,36 @@ namespace Chapter.EventBus
 
             _isButtonEnabled = true;
         }
+
+        void OnEnable()
+        {
+            RaceEventBus.Subscribe(RaceEventType.STOP, Restart);
+        }
+
+        void OnDisable()
+        {
+            RaceEventBus.Unsubscribe(RaceEventType.STOP, Restart);
+        }
+
+        private void Restart()
+        {
+            if(_isButtonEnabled)
+            {
+                _isButtonEnabled = true;
+            }
+        }
+
+        void OnGUI()
+        {
+            if(_isButtonEnabled)
+            {
+                if(GUILayout.Button("Start Countdown"))
+                {
+                    _isButtonEnabled = false;
+                    RaceEventBus.Publish(RaceEventType.COUNTDOWN);
+                }
+            }
+        }
     }
 }
 
