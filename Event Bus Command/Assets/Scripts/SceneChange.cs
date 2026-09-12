@@ -3,15 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class SceneChange : MonoBehaviour
 {
-    void OnGUI()
+    public void NextScene()
     {
-        if(GUI.Button(new Rect(0, 100, 80, 25), "Next Scene"))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
-        // if(GUI.Button(new Rect(0, 120, 80, 25), "Previous Scene"));
-        // {
-        //     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-        // }    
+        SceneManager.LoadScene("Command");
+    }
+
+    public void PreviousScene()
+    {
+        SceneManager.LoadScene("Event Bus");
     }
 }
