@@ -3,15 +3,15 @@ using UnityEngine;
 
 public class TurnRight : Command
 {
-    private BikeController _controller;
+    private MotorBikeController _controller;
 
-    public TurnRight(BikeController controller)
+    public TurnRight(MotorBikeController controller)
     {
         _controller = controller;
     }
 
     public override void Execute()
     {
-        _controller.Turn(BikeController.Direction.Right);
+        _controller.Turn(MotorBikeController.Direction.Right);
     }
 }

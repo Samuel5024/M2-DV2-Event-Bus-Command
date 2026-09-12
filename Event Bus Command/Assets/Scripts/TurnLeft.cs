@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class TurnLeft : Command
 {
-    private BikeController _controller;
+    private MotorBikeController _controller;
 
-    public TurnLeft(BikeController controller)
+    public TurnLeft(MotorBikeController controller)
     {
         _controller = controller;
     }
     public override void Execute()
     {
-        _controller.Turn(BikeController.Direction.Left);
+        _controller.Turn(MotorBikeController.Direction.Left);
     }
 }

@@ -5,17 +5,17 @@ public class InputHandler : MonoBehaviour
     private Invoker _invoker;
     private bool _isReplaying;
     private bool _isRecording;
-    private BikeController1 _bikeController1;
+    private MotorBikeController _MotorBikeController;
     private Command _buttonA, _buttonD, _buttonW;
     
     void Start()
     {
         _invoker = gameObject.AddComponent<Invoker>();
-        _bikeController1 = FindObjectOfType<BikeController1>();
+        _MotorBikeController = FindObjectOfType<MotorBikeController>();
 
-        _buttonA = new TurnLeft(_bikeController1);
-        _buttonD = new TurnRight(_bikeController1);
-        _buttonW = new ToggleTurbo(_bikeController1);
+        _buttonA = new TurnLeft(_MotorBikeController);
+        _buttonD = new TurnRight(_MotorBikeController);
+        _buttonW = new ToggleTurbo(_MotorBikeController);
     }
 
     void Update()
@@ -41,7 +41,7 @@ public class InputHandler : MonoBehaviour
     {
         if(GUILayout.Button("Start Recording"))
         {
-            _bikeController1.ResetPosition();
+            _MotorBikeController.ResetPosition();
             _isReplaying = false;
             _isRecording = true;
             _invoker.Record();
@@ -49,7 +49,7 @@ public class InputHandler : MonoBehaviour
 
         if(GUILayout.Button("Stop Recording"))
         {
-            _bikeController1.ResetPosition();
+            _MotorBikeController.ResetPosition();
             _isRecording = false;
         }
 
@@ -57,7 +57,7 @@ public class InputHandler : MonoBehaviour
         {
             if(GUILayout.Button("Start Replay"))
             {
-                _bikeController1.ResetPosition();
+                _MotorBikeController.ResetPosition();
                 _isRecording = false;
                 _isReplaying = true;
                 _invoker.Replay();

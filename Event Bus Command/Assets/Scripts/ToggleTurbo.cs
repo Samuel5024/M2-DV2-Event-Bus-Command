@@ -2,15 +2,15 @@ using Chapter.EventBus;
 
 public class ToggleTurbo : Command
 {
-    private BikeController1 _controller1;
+    private MotorBikeController _controller;
     
-    public ToggleTurbo(BikeController controller1)
+    public ToggleTurbo(MotorBikeController controller)
     {
-        _controller1 = controller1;
+        _controller = controller;
     }
 
     public override void Execute()
     {
-        _controller1.ToggleTurbo();
+        _controller.ToggleTurbo();
     }
 }
